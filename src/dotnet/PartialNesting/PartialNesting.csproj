@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AssemblyName>PartialNesting</AssemblyName>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591;MSB3277</NoWarn>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Rider.SDK" Version="2026.2.3.1" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <!-- Pin SDK dependencies whose declared minimum versions are unavailable. -->
+    <PackageReference Include="JetBrains.Rider.Native.Core.windows-arm64.Release" Version="262.0.20260721.221058" PrivateAssets="all" />
+    <PackageReference Include="JetBrains.Rider.Native.Core.windows-x64.Release" Version="262.0.20260721.221103" PrivateAssets="all" />
+    <PackageReference Include="JetBrains.Rider.Native.Core.windows-x86.Release" Version="262.0.20260721.221052" PrivateAssets="all" />
+    <Compile Include="../../../protocol/build/generated/csharp/**/*.cs" />
+  </ItemGroup>
+</Project>

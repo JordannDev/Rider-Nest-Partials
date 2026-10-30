@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Named/CustomerRepository.Designer.cs">
+      <DependentUpon>CustomerRepository.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Named/CustomerRepository.Metadata.cs">
+      <DependentUpon>CustomerRepository.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
