@@ -20,9 +20,11 @@ Supports C# partial classes. Other partial type kinds, cross-folder grouping, an
 
 ## Install
 
-Build the plugin, then choose **Settings → Plugins → Install Plugin from Disk** and select `build/distributions/rider-partial-nesting-0.1.0.zip`. Restart Rider.
+Build the plugin, then choose **Settings → Plugins → Install Plugin from Disk** and select `build/distributions/rider-partial-nesting-0.2.0.zip`. Restart Rider.
 
 Toggle **Settings → Appearance & Behavior → Partial Class Nesting** to enable or disable it. Rider's **File Nesting Settings** switch must also be enabled.
+
+Enable **Shorten nested partial filenames** to display `BatchRepository.Inventory.cs` as `Inventory.cs` beneath `BatchRepository.cs`. This setting is off by default and changes only child labels. Full filenames remain in tooltips; file names, paths, sorting, and actions stay unchanged. Unrelated names, ambiguous labels, and Rider's existing nested children keep their full names.
 
 The initial target is Rider **2026.2.3.1** (build **262.10968.170**). Compatibility is limited to the 262 release line; later versions require separate verification. Remote Development is not currently supported.
 

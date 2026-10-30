@@ -11,5 +11,6 @@ import com.intellij.openapi.components.Storage
 class PartialNestingSettings : SimplePersistentStateComponent<PartialNestingSettings.Settings>(Settings()) {
     class Settings : BaseState() {
         var enabled by property(true)
+        var shortenNestedFilenames by property(false)
     }
 }

@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation(kotlin("test-junit"))
     intellijPlatform {
         val riderHome = providers.gradleProperty("riderHome")
         if (riderHome.isPresent) {
@@ -34,6 +35,7 @@ kotlin {
     sourceSets.main {
         kotlin.srcDirs("src/rider/main/kotlin", "protocol/build/generated/kotlin")
     }
+    sourceSets.test { kotlin.srcDir("src/rider/test/kotlin") }
 }
 
 sourceSets.main { resources.srcDir("src/rider/main/resources") }
