@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.explorer
+package cloud.jordanm.rider.partialnesting.explorer
 
 import kotlin.test.Test
 import kotlin.test.assertEquals

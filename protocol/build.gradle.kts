@@ -20,7 +20,7 @@ rdgen {
         language = "kotlin"
         transform = "asis"
         root = "model.PartialNestingRoot"
-        namespace = "com.jordanmolenaar.rider.partialnesting.protocol"
+        namespace = "cloud.jordanm.rider.partialnesting.protocol"
         directory = layout.buildDirectory.dir("generated/kotlin").get().asFile.path
     }
     generator {

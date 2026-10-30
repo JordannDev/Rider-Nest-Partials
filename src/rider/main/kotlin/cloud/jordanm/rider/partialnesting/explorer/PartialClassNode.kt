@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.explorer
+package cloud.jordanm.rider.partialnesting.explorer
 
 import com.intellij.ide.util.treeView.AbstractTreeNode
 import com.intellij.openapi.components.service
@@ -9,7 +9,7 @@ import com.jetbrains.rider.projectView.views.SolutionViewCustomEntityContainer
 import com.jetbrains.rider.projectView.views.solutionExplorer.nodes.SolutionExplorerModelNode
 import com.jetbrains.rider.projectView.workspace.ProjectModelEntityReference
 import com.jetbrains.rider.projectView.workspace.isParentOf
-import com.jordanmolenaar.rider.partialnesting.settings.PartialNestingSettings
+import cloud.jordanm.rider.partialnesting.settings.PartialNestingSettings
 
 internal class PartialClassNode(
     project: Project,

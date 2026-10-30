@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.explorer
+package cloud.jordanm.rider.partialnesting.explorer
 
 import com.intellij.ide.util.treeView.AbstractTreeNode
 import com.intellij.openapi.components.service
@@ -11,7 +11,7 @@ import com.jetbrains.rider.projectView.workspace.ProjectModelEntity
 import com.jetbrains.rider.projectView.workspace.containingProjectEntity
 import com.jetbrains.rider.projectView.workspace.getFile
 import com.jetbrains.rider.projectView.workspace.isProjectFile
-import com.jordanmolenaar.rider.partialnesting.services.PartialNestingService
+import cloud.jordanm.rider.partialnesting.services.PartialNestingService
 
 class PartialNestingCustomization(project: Project) : SolutionExplorerCustomization(project) {
     override fun modifyChildren(

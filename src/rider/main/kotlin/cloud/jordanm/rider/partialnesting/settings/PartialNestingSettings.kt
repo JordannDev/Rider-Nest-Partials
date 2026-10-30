@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.settings
+package cloud.jordanm.rider.partialnesting.settings
 
 import com.intellij.openapi.components.BaseState
 import com.intellij.openapi.components.Service

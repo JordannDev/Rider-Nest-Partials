@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.explorer
+package cloud.jordanm.rider.partialnesting.explorer
 
 import com.intellij.ide.projectView.PresentationData
 import com.intellij.ide.util.treeView.PresentableNodeDescriptor.ColoredFragment

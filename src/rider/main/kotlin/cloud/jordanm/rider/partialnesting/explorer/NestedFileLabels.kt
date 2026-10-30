@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.explorer
+package cloud.jordanm.rider.partialnesting.explorer
 
 internal object NestedFileLabels {
     fun forChildren(parentName: String, names: List<String>, existingNames: List<String> = emptyList()): List<String> {

@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.settings
+package cloud.jordanm.rider.partialnesting.settings
 
 import com.intellij.openapi.components.service
 import com.intellij.openapi.options.BoundConfigurable
@@ -7,7 +7,7 @@ import com.intellij.ui.dsl.builder.bindSelected
 import com.intellij.ui.dsl.builder.Cell
 import com.intellij.ui.dsl.builder.panel
 import com.intellij.ui.dsl.builder.selected
-import com.jordanmolenaar.rider.partialnesting.services.PartialNestingService
+import cloud.jordanm.rider.partialnesting.services.PartialNestingService
 import javax.swing.JCheckBox
 
 class PartialNestingConfigurable(private val project: Project) : BoundConfigurable("Partial Class Nesting") {

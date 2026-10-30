@@ -1,5 +1,5 @@
 <idea-plugin require-restart="true">
-  <id>com.jordanmolenaar.partialnesting</id>
+  <id>cloud.jordanm.partialnesting</id>
   <name>Partial Class Nesting</name>
   <vendor>Jordan Molenaar</vendor>
   <depends>com.intellij.modules.rider</depends>
@@ -11,8 +11,8 @@
     <p>Uses C# type information and leaves project files unchanged.</p>
   ]]></description>
   <extensions defaultExtensionNs="com.intellij">
-    <solutionExplorerCustomization implementation="com.jordanmolenaar.rider.partialnesting.explorer.PartialNestingCustomization" />
+    <solutionExplorerCustomization implementation="cloud.jordanm.rider.partialnesting.explorer.PartialNestingCustomization" />
     <projectConfigurable parentId="appearance" id="partialClassNesting" displayName="Partial Class Nesting"
-                         instance="com.jordanmolenaar.rider.partialnesting.settings.PartialNestingConfigurable" />
+                         instance="cloud.jordanm.rider.partialnesting.settings.PartialNestingConfigurable" />
   </extensions>
 </idea-plugin>

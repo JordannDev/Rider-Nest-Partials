@@ -5,7 +5,7 @@ plugins {
     id("org.jetbrains.intellij.platform") version "2.19.0"
 }
 
-group = "com.jordanmolenaar.rider.partialnesting"
+group = "cloud.jordanm.rider.partialnesting"
 version = providers.gradleProperty("pluginVersion").get()
 
 repositories {

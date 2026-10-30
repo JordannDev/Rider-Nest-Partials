@@ -1,4 +1,4 @@
-package com.jordanmolenaar.rider.partialnesting.services
+package cloud.jordanm.rider.partialnesting.services
 
 import com.intellij.openapi.Disposable
 import com.intellij.openapi.application.EDT
@@ -18,11 +18,11 @@ import com.jetbrains.rider.projectView.solution
 import com.jetbrains.rider.projectView.workspace.ProjectModelEntity
 import com.jetbrains.rider.projectView.workspace.ProjectModelEntityReference
 import com.jetbrains.rider.projectView.workspace.toReference
-import com.jordanmolenaar.rider.partialnesting.protocol.FolderRequest
-import com.jordanmolenaar.rider.partialnesting.protocol.NestingGroup
-import com.jordanmolenaar.rider.partialnesting.protocol.PartialNestingModel
-import com.jordanmolenaar.rider.partialnesting.protocol.partialNestingModel
-import com.jordanmolenaar.rider.partialnesting.settings.PartialNestingSettings
+import cloud.jordanm.rider.partialnesting.protocol.FolderRequest
+import cloud.jordanm.rider.partialnesting.protocol.NestingGroup
+import cloud.jordanm.rider.partialnesting.protocol.PartialNestingModel
+import cloud.jordanm.rider.partialnesting.protocol.partialNestingModel
+import cloud.jordanm.rider.partialnesting.settings.PartialNestingSettings
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.CoroutineStart
