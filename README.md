@@ -1,34 +1,43 @@
-<img src="assets/icon.svg" width="64" height="64" alt="">
+# Nest Partial Classes - Jetbrains Rider
 
-# Partial Class Nesting
+Groups C# partial-class files in JetBrains Rider's Solution Explorer using their class declarations, rather than filename rules.
 
-Nests C# files that declare the same partial class in JetBrains Rider's Solution Explorer, regardless of their filenames.
+Files such as `CustomerRepository.Read.cs` and `Queries.cs` nest under `CustomerRepository.cs` when they belong to the same partial class.
 
-For example, `CustomerRepository.Read.cs` and `Queries.cs` appear under `CustomerRepository.cs` when they declare the same partial class.
+<img src="assets/screenshots/solution-explorer.jpg" width="480" alt="BatchRepository.cs expanded to show Inventory.cs, Inventory.Queries.cs, and children that retain their full filenames">
 
-## Behavior
+## How it works
 
-- Groups files within the same project and logical folder.
-- Prefers `ClassName.cs` as the parent; otherwise uses the first path in ordinal order.
-- Preserves existing Designer and `DependentUpon` nesting.
-- Leaves files containing unrelated partial classes separate.
-- Uses the active compilation context, including namespaces, generic arity, and containing types.
-- Updates after code edits, file changes, project reloads, and compilation-context changes.
-- Does not modify source files or project metadata.
-
-Supports C# partial classes. Other partial type kinds, cross-folder grouping, and virtual source-generator files are outside the current scope.
+- Rider's .NET backend identifies matching partial classes; the frontend nests their files.
+- Groups stay within the same project and logical folder. `ClassName.cs` is preferred as the parent; otherwise the first path in ordinal order is used.
+- Namespace, containing types, generic arity, and the active compilation context determine which declarations match. Files mixing unrelated partial classes stay separate.
+- Groups refresh after code edits, file changes, and project reloads. Existing Designer and `DependentUpon` nesting is preserved.
+- Source files and project metadata are never changed.
 
 ## Install
 
 Build the plugin, then choose **Settings → Plugins → Install Plugin from Disk** and select `build/distributions/rider-partial-nesting-0.2.0.zip`. Restart Rider.
 
-Toggle **Settings → Appearance & Behavior → Partial Class Nesting** to enable or disable it. Rider's **File Nesting Settings** switch must also be enabled.
+## Settings
 
-Enable **Shorten nested partial filenames** to display `BatchRepository.Inventory.cs` as `Inventory.cs` beneath `BatchRepository.cs`. This setting is off by default and changes only child labels. Full filenames remain in tooltips; file names, paths, sorting, and actions stay unchanged. Unrelated names, ambiguous labels, and Rider's existing nested children keep their full names.
+Open **Settings → Appearance & Behavior → Partial Class Nesting**. Rider's **File Nesting Settings** switch must also be enabled.
 
-The initial target is Rider **2026.2.3.1** (build **262.10968.170**). Compatibility is limited to the 262 release line; later versions require separate verification. Remote Development is not currently supported.
+| Setting | Default | Behavior |
+| --- | --- | --- |
+| Nest partial-class files in Solution Explorer | On | Groups files that declare the same partial class. |
+| Shorten nested partial filenames | Off | Shows `BatchRepository.Inventory.cs` as `Inventory.cs` beneath `BatchRepository.cs`. |
 
-Validated locally on macOS with Apple Silicon. Intel Macs, Windows, and Linux have not been tested.
+Shortening removes the parent's name followed by a dot, using an exact, case-sensitive match. Nonmatching names, conflicting labels, and Rider's existing nested children keep their full names. Full filenames remain in tooltips; navigation, sorting, and file actions are unchanged.
+
+Settings are saved per project and apply when you save the settings dialog.
+
+<img src="assets/screenshots/settings.jpg" width="680" alt="Partial Class Nesting settings showing both checkboxes and the filename-shortening explanation">
+
+## Compatibility
+
+- Targets Rider **2026.2.3.1** (build **262.10968.170**), limited to the **262** release line.
+- Validated on **macOS with Apple Silicon**. Intel Macs, Windows, and Linux have not been tested.
+- Supports C# partial classes. Other partial type kinds, cross-folder grouping, virtual source-generator files, and Remote Development are not supported.
 
 ## Build and test
 
@@ -60,11 +69,7 @@ dotnet test src/dotnet/PartialNesting.Tests/PartialNesting.Tests.csproj
 - `protocol`: RD contracts; C# and Kotlin bindings are generated during the build.
 - `samples/PartialClasses`: manual integration cases.
 
-The plugin uses Rider's `solutionExplorerCustomization` extension. Files retain their native project-item identities so navigation and file actions continue to target the original items.
-
-The backend DLL runs inside Rider's .NET host on macOS. Its `net472` build target follows the SDK template.
-
-Rider and ReSharper dependencies must stay aligned when upgrading `riderVersion` in `gradle.properties` and `JetBrains.Rider.SDK` in the backend project.
+Keep `riderVersion` in `gradle.properties` aligned with `JetBrains.Rider.SDK` in the backend project.
 
 ## Development references
 
