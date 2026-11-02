@@ -16,7 +16,11 @@ Files such as `CustomerRepository.Read.cs` and `Queries.cs` nest under `Customer
 
 ## Install
 
-Build the plugin, then choose **Settings → Plugins → Install Plugin from Disk** and select `build/distributions/rider-partial-nesting-0.2.0.zip`. Restart Rider.
+[![Install in JetBrains Rider](https://img.shields.io/badge/JetBrains_Rider-Install_Plugin-000000?style=for-the-badge&logo=jetbrains&logoColor=white)](https://plugins.jetbrains.com/plugin/35729)
+
+Open the Marketplace page above and choose **Install to IDE**, or search for **Nest Partial Classes** in Rider under **Settings → Plugins → Marketplace**.
+
+To install a local build, choose **Settings → Plugins → Install Plugin from Disk** and select `build/distributions/rider-partial-nesting-0.2.0.zip`. Restart Rider.
 
 ## Settings
 
