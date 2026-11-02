@@ -77,3 +77,7 @@ Keep `riderVersion` in `gradle.properties` aligned with `JetBrains.Rider.SDK` in
 - [Official plugin template](https://github.com/JetBrains/resharper-rider-plugin)
 - [ReSharper declared elements](https://www.jetbrains.com/help/resharper/sdk/DeclaredElements.html)
 - [Rider extension points](https://plugins.jetbrains.com/docs/intellij/rider-extension-point-list.html)
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
